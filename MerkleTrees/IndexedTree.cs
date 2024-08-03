@@ -238,15 +238,6 @@ namespace MerkleTrees
             v2 = BitConverter.ToUInt64(bytes, 16);
             v3 = BitConverter.ToUInt64(bytes, 24);
         }
-        public static bool Bigger(U256 lhs, U256 rhs) 
-        {
-            bool eq0 = lhs.v3 != rhs.v3;
-            bool eq1 = lhs.v2 != rhs.v2;
-            bool eq2 = lhs.v1 != rhs.v1;
-            bool eq3 = lhs.v0 != rhs.v0;
-
-            return (eq0 && lhs.v3 > rhs.v3) || (!eq0 && eq1 && lhs.v2 > rhs.v2) || (!eq1 && eq2 && lhs.v1 > rhs.v1) || (!eq2 && lhs.v0 > rhs.v0);
-        }
         public U256(ulong v0, ulong v1, ulong v2, ulong v3)
         {
             this.v0 = v0;
